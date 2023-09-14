@@ -29,4 +29,7 @@ GET /breakfasts/{{id}}
 ```js
 200 Ok
 ```
+```js
+*Redirect* to your link with given code
+```
 
