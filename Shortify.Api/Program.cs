@@ -25,11 +25,11 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.MapPost("/api/short", async (ShortUrlRequest request,
-    HttpContext httpContext,
+    HttpRequest httpRequest,
     ApplicationDbContext db,
     ShortedUrlService shortedUrlService) =>
 {
-    if (!Uri.TryCreate(request.Url, UriKind.Absolute, out var url))
+    if (!Uri.TryCreate(request.Url, UriKind.Absolute, out _))
     {
         return Results.BadRequest("Url is invalid.");
     }
@@ -41,7 +41,7 @@ app.MapPost("/api/short", async (ShortUrlRequest request,
         Id = Guid.NewGuid(),
         OriginalUrl = request.Url,
         Code = code,
-        ShortedUrl = $"{httpContext.Request.Scheme}://{httpContext.Request.Host}/api/{code}",
+        ShortedUrl = $"{httpRequest.Scheme}://{httpRequest.Host}/api/{code}",
     };
 
     await db.ShortUrls.AddAsync(shortedUrl);
