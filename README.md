@@ -13,6 +13,7 @@ POST /api/short
 {
   "url": "string"
 }
+```
 ## Create Short URL
 
 ### Short URL Request
