@@ -24,7 +24,7 @@ POST /api/short
 GET /breakfasts/{{id}}
 ```
 
-### Get Breakfast Response
+### Short URL Response
 
 ```js
 200 Ok
