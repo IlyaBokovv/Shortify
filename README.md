@@ -14,13 +14,6 @@ POST /api/short
   "url": "string"
 }
 ```
-## Create Short URL
-
-### Short URL Request
-
-```js
-POST /api/short
-```
 
 ## Get Short URL
 
