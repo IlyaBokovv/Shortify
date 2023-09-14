@@ -21,7 +21,7 @@ POST /api/short
 
 
 ```js
-GET /breakfasts/{{id}}
+GET /api/{{code}}
 ```
 
 ### Short URL Response
